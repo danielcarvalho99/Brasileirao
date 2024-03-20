@@ -90,6 +90,10 @@ def generate_records_df(records):
 
     return df
 
+## Função para evitar nomes errados de times
+def validate_team_names(df):
+    pass
+
 
 def rankings_pipeline(url):
     links = get_championship_links(url)
