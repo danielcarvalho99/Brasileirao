@@ -92,11 +92,11 @@ def matches_pipeline(url):
     new_links = get_new_links(filtered_links)
     replaced_links = replace_new_links(new_links)
 
-    matches_links = get_matches_links(replaced_links[:2])
+    matches_links = get_matches_links(replaced_links)
     matches = get_matches(matches_links)
     df = generate_matches_df(matches)
 
-    csv_file_path = 'matches_aux.csv'
+    csv_file_path = 'matches.csv'
     df.to_csv(csv_file_path, index=False)
 
 
