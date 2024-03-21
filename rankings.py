@@ -104,5 +104,5 @@ def rankings_pipeline(url):
     csv_file_path = 'rankings.csv'
     df.to_csv(csv_file_path, index=False)
 
-
-rankings_pipeline(URL)
+if __name__ == '__main__':
+    rankings_pipeline(URL)

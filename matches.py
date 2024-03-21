@@ -99,5 +99,5 @@ def matches_pipeline(url):
     csv_file_path = 'matches.csv'
     df.to_csv(csv_file_path, index=False)
 
-
-matches_pipeline(URL)
+if __name__ == '__main__':
+    matches_pipeline(URL)
