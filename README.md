@@ -1,12 +1,29 @@
 # Brasileirão
 
-Este é um projeto de engenharia de dados, utilizando a AWS como serviço de nuvem, responsável por extrair e estruturar dados de partidas e classificações dos times do campeonato brasileiro desde o início da era dos pontos corridos, em 2003.
+Este repositório contém um pipeline de dados ELT para o processamento e análise de partidas e classificações do Campeonato Brasileiro desde 2003, início da era dos pontos corridos.
 
-As ferramentas utilizadas nesse projeto foram:
-* BeautifulSoup: Biblioteca em Python utilizada para Web Scraping, coletando informações do HTML do site [GolAberto](https://www.golaberto.com.br/)
-* AWS S3: Os buckets da AWS foram utlizados para o armazenamento tanto dos dados brutos, quanto dos dados após o ETL
-* AWS GLUE: Responsável pela geração dos Schemas das tabelas e geração dos catálogos
+🔗 Fonte dos Dados
 
+- Os dados utilizados neste projeto foram obtidos por meio de Web Scraping do site [GolAberto](https://www.golaberto.com.br/) 
 
-A arquitetura do projeto fica da seguinte forma:
+📜 Scripts de Coleta
+
+Na pasta **scripts**, estão os seguintes arquivos responsáveis pelo scraping dos dados:
+
+- matches.py: Realiza o scraping das informações de partidas do Campeonato Brasileiro.
+- rankings.py: Coleta os dados de classificação dos times ao longo das temporadas.
+
+📂 Armazenamento dos Dados
+
+Na pasta **sources**, estão armazenados os arquivos .csv gerados pelos scrapers da pasta **scripts**. Esses arquivos foram posteriormente inseridos em um Bucket S3:
+
+- matches.csv: gerado pelo script matches.py
+- rankings.csv: gerado pelo script rankings.py
+
+⚙️ Processamento e Transformação
+
+- etl.py: Contém o código gerado pelo AWS Glue, responsável por transformar os dados de forma adequada para análise e inseri-los em outro Bucket S3.
+
+📌 Diagrama da Solução
+- O diagrama do projeto fica da seguinte forma:
 ![WhatsApp Image 2024-03-28 at 19 11 39](https://github.com/danielcarvalho99/Brasileirao/assets/40178648/9299643d-0e7f-478a-84b4-1a0c6f181d2e)
