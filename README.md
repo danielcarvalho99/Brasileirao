@@ -1,4 +1,4 @@
-# Brasileirão
+# Brasileirão ⚽
 
 Este repositório contém um pipeline de dados ELT para o processamento e análise de partidas e classificações do Campeonato Brasileiro desde 2003, início da era dos pontos corridos.
 
